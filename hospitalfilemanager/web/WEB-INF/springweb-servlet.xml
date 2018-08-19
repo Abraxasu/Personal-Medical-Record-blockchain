@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--This file controls which Spring Beans are in charge of webpage delivery.-->
+    <context:component-scan base-package="com.sbtic.web.controllers"/>
+    <mvc:annotation-driven/>
+
+    <!--The bean that lets us use JSP files is configured below-->
+    <bean name="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsps/"/><!--JSP files go in this directoy-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--Loads static files from /web/static (defined by 'location'). Put non dynamic stuff like pictures and scripts in this directory.-->
+    <mvc:resources mapping="/static/**" location="/static/"/>
+
+</beans>
