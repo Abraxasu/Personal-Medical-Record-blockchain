@@ -5,21 +5,21 @@ import java.util.List;
 
 public class UserRecord implements Serializable
 {
-    private String privateKey;
+    private String uuid;
 
     private List<DoctorVisit> doctorVisits;
     private List<MedicalHistory> medicalHistory;
     private MedicalAid medicalAid;
     private PersonalInfo personalInfo;
 
-    public String getPrivateKey()
+    public String getUuid()
     {
-        return privateKey;
+        return uuid;
     }
 
-    public void setPrivateKey(String privateKey)
+    public void setUuid(String uuid)
     {
-        this.privateKey = privateKey;
+        this.uuid = uuid;
     }
 
     public List<DoctorVisit> getDoctorVisits()

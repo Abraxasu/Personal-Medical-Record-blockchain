@@ -1,5 +1,7 @@
 package com.sbtic.db.data.patient;
 
+import com.sbtic.Util;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -10,7 +12,7 @@ public class DoctorVisit implements Serializable
     private String hospitalAddress;
     private String doctorID;
     private String reasonForVisit;
-    private String diagonsis;
+    private String diagnosis;
     private String tests;
     private String medication;
     private String notes;
@@ -18,6 +20,11 @@ public class DoctorVisit implements Serializable
     public Date getDate()
     {
         return date;
+    }
+
+    public String getDateString()
+    {
+        return Util.formatDate(date);
     }
 
     public void setDate(Date date)
@@ -65,14 +72,14 @@ public class DoctorVisit implements Serializable
         this.reasonForVisit = reasonForVisit;
     }
 
-    public String getDiagonsis()
+    public String getDiagnosis()
     {
-        return diagonsis;
+        return diagnosis;
     }
 
-    public void setDiagonsis(String diagonsis)
+    public void setDiagnosis(String diagnosis)
     {
-        this.diagonsis = diagonsis;
+        this.diagnosis = diagnosis;
     }
 
     public String getTests()

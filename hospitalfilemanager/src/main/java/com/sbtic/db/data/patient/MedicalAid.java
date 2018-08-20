@@ -8,9 +8,6 @@ public class MedicalAid implements Serializable
     private String dependentCode;
     private String company;
     private String plan;
-    private String mainMemberName;
-    private String mainMemberID;
-    private String usageHistory;
 
     public String getNumber()
     {
@@ -52,33 +49,4 @@ public class MedicalAid implements Serializable
         this.plan = plan;
     }
 
-    public String getMainMemberName()
-    {
-        return mainMemberName;
-    }
-
-    public void setMainMemberName(String mainMemberName)
-    {
-        this.mainMemberName = mainMemberName;
-    }
-
-    public String getMainMemberID()
-    {
-        return mainMemberID;
-    }
-
-    public void setMainMemberID(String mainMemberID)
-    {
-        this.mainMemberID = mainMemberID;
-    }
-
-    public String getUsageHistory()
-    {
-        return usageHistory;
-    }
-
-    public void setUsageHistory(String usageHistory)
-    {
-        this.usageHistory = usageHistory;
-    }
 }

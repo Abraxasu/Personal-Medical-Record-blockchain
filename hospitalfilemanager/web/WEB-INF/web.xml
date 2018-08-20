@@ -5,8 +5,8 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-  <display-name>Hospital File Management System</display-name><!--TODO come up with a better name and description-->
-  <description>A File Management System for Hospitals</description>
+  <display-name>Personal Medical Records</display-name>
+  <description>A system for maintaining medical records on a blockchain</description>
 
         <!--Spring DispatcherServlet - loads springweb-servlet.xml and does Spring stuff for all web links.-->
         <!--This servlet essentially takes over everything-->
@@ -20,34 +20,15 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
-  <!--Database connection pool configuration for TomCat. Should match config in context.xml in TomCat config, or things will go horribly wrong here-->
-  <!--<resource-ref>
-    <description>Main DB</description>
-    <res-ref-name>jdbc/stms</res-ref-name>
-    <res-type>javax.sql.DataSource</res-type>
-    <res-auth>Container</res-auth>
-  </resource-ref>-->
-
   <!--Loads Spring contexts from XML files for use in Spring web-->
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
 
-  <!--Login page filter-->
-  <!--<filter>
-    <filter-name>springSecurityFilterChain</filter-name>
-    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>springSecurityFilterChain</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>-->
-
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>
       classpath:spring/beans.xml
-<!--      classpath:spring/securityContext.xml-->
     </param-value>
   </context-param>
   <context-param>

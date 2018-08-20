@@ -4,6 +4,7 @@ import com.sbtic.db.access.encryption.DataEncrypter;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.*;
+import java.util.Base64;
 
 public class DataEncoder
 {
@@ -49,5 +50,14 @@ public class DataEncoder
             err.printStackTrace();
         }
         return result;
+    }
+
+    public String encodeB64(Serializable data, String key)
+    {
+        return Base64.getEncoder().encodeToString(encode(data, key));
+    }
+    public Serializable decodeB64(String data, String key)
+    {
+        return decode(Base64.getDecoder().decode(data), key);
     }
 }

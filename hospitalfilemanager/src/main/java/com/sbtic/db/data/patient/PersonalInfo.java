@@ -1,15 +1,13 @@
 package com.sbtic.db.data.patient;
 
+import com.sbtic.Util;
+
 import java.io.Serializable;
 import java.util.Date;
 
 public class PersonalInfo implements Serializable
 {
-    private String firstName;
-    private String lastName;
-    private String middleName;
-    private String title;
-    private String citizenship;
+    private String name;
     private String idNumber;
     private Gender gender;
     private Date dob;
@@ -18,54 +16,16 @@ public class PersonalInfo implements Serializable
     private String emergencyContact;
     private BloodType bloodType;
 
-    public String getFirstName()
+    //TODO use more of these fields in the web page!
+
+    public String getName()
     {
-        return firstName;
+        return name;
     }
 
-    public void setFirstName(String firstName)
+    public void setName(String name)
     {
-        this.firstName = firstName;
-    }
-
-    public String getLastName()
-    {
-        return lastName;
-    }
-
-    public void setLastName(String lastName)
-    {
-        this.lastName = lastName;
-    }
-
-    public String getMiddleName()
-    {
-        return middleName;
-    }
-
-    public void setMiddleName(String middleName)
-    {
-        this.middleName = middleName;
-    }
-
-    public String getTitle()
-    {
-        return title;
-    }
-
-    public void setTitle(String title)
-    {
-        this.title = title;
-    }
-
-    public String getCitizenship()
-    {
-        return citizenship;
-    }
-
-    public void setCitizenship(String citizenship)
-    {
-        this.citizenship = citizenship;
+        this.name = name;
     }
 
     public String getIdNumber()
@@ -91,6 +51,11 @@ public class PersonalInfo implements Serializable
     public Date getDob()
     {
         return dob;
+    }
+
+    public String getDobString()
+    {
+        return Util.formatDate(dob);
     }
 
     public void setDob(Date dob)

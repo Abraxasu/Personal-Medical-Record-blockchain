@@ -1,5 +1,7 @@
 package com.sbtic.db.data.patient;
 
+import com.sbtic.Util;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -13,6 +15,11 @@ public class MedicalHistory implements Serializable
     public Date getStartDate()
     {
         return startDate;
+    }
+
+    public String getStartDateString()
+    {
+        return Util.formatDate(startDate);
     }
 
     public void setStartDate(Date startDate)

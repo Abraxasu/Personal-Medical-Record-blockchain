@@ -16,23 +16,4 @@
     <import resource="serviceBeans.xml"/>
 
 
-    <!--Use this bean for standalone (non-Tomcat). Might use this for local integration tests later-->
-  <beans profile="testing">
-    <!--<context:property-placeholder location="jdbc.properties"/>
-    <bean name="dataSource" class = "org.apache.commons.dbcp.BasicDataSource"
-          destroy-method="close">
-      <property name="driverClassName" value="${jdbc.driver}"/>
-      <property name="username" value="${jdbc.user}"/>
-      <property name="password" value="${jdbc.password}"/>
-      <property name="url" value="${jdbc.url}"/>
-    </bean>-->
-  </beans>
-
-  <beans profile="production">
-      <!--Use this bean for a datasource through Tomcat-->
-      <!--<jee:jndi-lookup id="dataSource" jndi-name="jdbc/stms" expected-type="javax.sql.DataSource"/>-->
-  </beans>
-
-
-
 </beans>

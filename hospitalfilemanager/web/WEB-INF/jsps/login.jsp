@@ -1,8 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+
 <html lang="en">
 <head>
-    <title>STMS - Login</title>
+    <title>Hospital File Management System</title>
     <%@include file="common/headerIncludes.jsp"%>
     <style>
         .lightText {
@@ -24,43 +26,68 @@
 
 <div class="container">
 
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Student Time Management System
-                <small class="lightText">STMS</small>
-            </h1>
+    <h1 class="page-header">Personal Medical Records
+        <small class="lightText">PMR</small>
+    </h1>
 
-            <%--Show login error if applicable--%>
-            <c:if test="${param.error != null}">
-                <div class="alert alert-danger alert-dismissible">
-                    <strong>Login failed</strong> Username and/or password incorrect.
-                </div>
-            </c:if>
+    <%--<div class="alert alert-danger alert-dismissible">
+        <strong>Login failed</strong> Username and/or password incorrect.
+    </div>--%>
 
-            <div class="card card-default">
-                <div class="card-header">
-                    <h3 class="panel-title">
-                        <span class="glyphicon glyphicon-log-in"></span>
-                        Log In
-                    </h3>
+    <div class="card card-default">
+        <div class="card-header">
+            <h3 class="panel-title">
+                <span class="glyphicon glyphicon-log-in"></span>
+                Log In
+            </h3>
+        </div>
+        <div class="card-body">
+            <sf:form name = "f" action="${pageContext.request.contextPath}/${param.target}" method="POST" modelAttribute="loginInfo">
+                <div class="form-group">
+                    <sf:input type="text" class="form-control" placeholder="Public key" path="publicKey"/>
                 </div>
-                <div class="card-body">
-                    <form name = "f" action="${pageContext.request.contextPath}/login" method="POST">
-                        <%--TODO add autofocus JavaScript to username field--%>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                        </div>
-                        <button type="submit" class="btn btn-default">Log In</button>
-
-                        <input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}" />
-                    </form>
+                <c:if test="${param.target != 'clients'}">
+                    <div class="form-group form-check-inline">
+                        <label class="form-check-label">
+                            <sf:radiobutton class="form-check-input" path="loginType" value="patient"/> Patient
+                        </label>
+                    </div>
+                </c:if>
+                <div class="form-group form-check-inline">
+                    <label class="form-check-label">
+                        <sf:radiobutton class="form-check-input" path="loginType" value="doctor"/> Doctor
+                    </label>
                 </div>
-            </div>
+                <c:if test="${param.target != 'clients'}">
+                    <div class="form-group form-check-inline">
+                        <label class="form-check-label">
+                            <sf:radiobutton class="form-check-input" path="loginType" value="nurse"/> Nurse
+                        </label>
+                    </div>
+                    <div class="form-group form-check-inline">
+                        <label class="form-check-label">
+                            <sf:radiobutton class="form-check-input" path="loginType" value="research"/> Researcher
+                        </label>
+                    </div>
+                    <div class="form-group form-check-inline">
+                        <label class="form-check-label">
+                            <sf:radiobutton class="form-check-input" path="loginType" value="pharmacist"/> Pharmacist
+                        </label>
+                    </div>
+                </c:if>
+                <div class="form-group form-check-inline">
+                    <label class="form-check-label">
+                        <sf:radiobutton class="form-check-input" path="loginType" value="clerk"/> Clerk
+                    </label>
+                </div>
+                <div>
+                    <sf:button type="submit" class="btn btn-default">Log In</sf:button>
+                </div>
+                <%--<input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}" />--%>
+            </sf:form>
         </div>
     </div>
+
 </div>
 <p style="margin-bottom:50px;"></p>
 </body>

@@ -4,7 +4,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="hospitalfilemanager" />
+          <element id="module-output" name="hospital-file-manager" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.7.RELEASE" />
@@ -13,17 +13,13 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.0.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.0.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.0.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.0.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.0.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.0.7.RELEASE" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="hospitalfilemanager/web/Web" />
+      <element id="javaee-facet-resources" facet="hospital-file-manager/web/Web" />
     </root>
   </artifact>
 </component>

@@ -7,6 +7,10 @@
     <%@include file="common/headerIncludes.jsp"%>
 
     <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
         .lightText {
             color: #959595;
         }
@@ -33,12 +37,13 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <c:set var="record" value="${record}" scope="request"/>
-            <jsp:include page="component/clientInfo.jsp"/>
+            <h5> Doctor not found </h5>
+            <p>
+                The given public key was not found on the Blockchain. Ensure you don't have any typos in your key and <a href="${pageContext.request.contextPath}/login?target=clients">try again</a>.
+            </p>
         </div>
     </div>
 </div>
-
 <p style="margin-bottom:50px;"></p>
 </body>
 </html>

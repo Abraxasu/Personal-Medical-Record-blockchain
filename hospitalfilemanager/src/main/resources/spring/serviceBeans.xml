@@ -9,7 +9,9 @@
   <!--Master context for 'user' (our) beans that we can use regardless of the 'master' context. Not that we have more than one of those right now...-->
 
   <!--DAO beans-->
-  <bean name="blockchainDAO" class="com.sbtic.db.access.BlockchainConnector"/>
   <bean name="dataEncoder" class="com.sbtic.db.access.DataEncoder"/>
+  <!--configurable beans below-->
   <bean name="dataEncrypter" class="com.sbtic.db.access.encryption.PassthroughEncrypter"/>
+  <bean name="DAO" class="com.sbtic.db.access.ExampleDataDAO"/>
+  <!--<bean name="DAO" class="com.sbtic.db.access.BlockchainDAO"/>-->
 </beans>
